@@ -2,14 +2,11 @@
 
 echo "Program of flip coin simulation"
 
-read -p "enter number of times coin is flip :" num
-
 head=0
 tail=0
 
-for ((i=1;i<=$num;i++))
+while [ $head -le 21 ] && [ $tail -le 21 ]
 do
-	echo "diplaying heads or tails"
 
 	toss=$(($RANDOM%2))
 
@@ -22,3 +19,20 @@ fi
 done
 echo "number of heads :" $head
 echo "number of tails :" $tail
+
+	if [ $head -eq $tail ]
+then
+	echo " Tie"
+else
+	if [ $head -gt $tail ]
+	then
+		echo " Head win "
+		win=$(($head-$tail))
+		echo " Head Won by $win Times"
+	else
+		echo " Tail win "
+                win=$(($tail-$head))
+                echo " Tail Won by $win Times"
+	fi
+fi
+
