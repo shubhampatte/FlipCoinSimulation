@@ -13,8 +13,10 @@ do
 	if [ $toss -eq 1 ]
 	then
 		echo "HEAD"
+		head=$(($head+1))
 	else
 		echo "TAIL"
+		tail=$(($tail+1))
 fi
 done
 echo "number of heads :" $head
@@ -35,4 +37,4 @@ else
                 echo " Tail Won by $win Times"
 	fi
 fi
-
+done
